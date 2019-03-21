@@ -1,8 +1,8 @@
 function shoppingTime(memberId, money) {
   // you can only write your code here!
   var obj = {}
-  obj.memberId = memberId
-  obj.money = money
+    obj.memberId = memberId
+    obj.money = money
   var itemList = ['Sepatu Stacattu', 'Baju Zoro', 'Baju H&N', 'Sweater Uniklooh', 'Casing Handphone']
   var itemPrice = [1500000, 500000, 250000, 175000, 50000]
   var buy = []
