@@ -1,18 +1,20 @@
 function checkAB(num) {
   // you can only write your code here!
+  var checkA = ''
+  var checkB = ''
 
   for (var i = 0; i < num.length; i++){
-    // console.log(num[i])
-    if (num[i] === 'a') {
-      for (var j = i; j < num.length; j++){
-        if (num[j] === 'b') {
-          return i <= j ? true : false
-        }
-      }
+    if (num[i] === 'a'){
+      checkA = i
+      // console.log(checkA)
+    } else if (num[i] === 'b'){
+      checkB = i
+      // console.log(checkB)
     }
-  }  
-return false
+  }
+  return checkA - checkB === 4 || checkB - checkA === 4
 }
+
 
 
 // TEST CASES

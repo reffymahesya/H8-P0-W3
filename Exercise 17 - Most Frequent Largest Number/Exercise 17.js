@@ -1,4 +1,4 @@
-function sorting(arrNumber) {
+ function sorting(arrNumber) {
   // code di sini
   var a = arrNumber.length
 

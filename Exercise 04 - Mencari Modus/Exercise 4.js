@@ -1,26 +1,25 @@
 function cariModus(arr) {
   // you can only write your code here!
-  var hasil = 0
-  var hitung = []
-  var modes = []
-  a = arr.length
-  var maxIndex = 0
+  var hitung = 0
+  var modus = 0
 
-  for(i = 0; i < a; i += 1){
-    var number = arr[i]
-    hitung[number] = (hitung[number] || 0) +1
-    if (hitung[number] > maxIndex) {
-      maxIndex = hitung[number]
-    }
-  }
-  for(i in hitung){
-    if (hitung.hasOwnProperty(i)){
-      if (hitung[i] === maxIndex){
-        modes.push(Number(i))
+  for (var i = 0; i < arr.length; i++){
+    for (var j = 0; j < arr.length; j++){
+      // console.log(arr[i] + '-' + arr[j])
+      if (arr[i] === arr[j] && i !== j){
+        modus = arr[i]
+        hitung++
+        // console.log(modus)
       }
     }
+    if (hitung > 4){
+      return -1
+    }
   }
-  return modes
+  if (hitung < -1){
+    return -1
+  }
+  return modus
 }
 
 // TEST CASES
