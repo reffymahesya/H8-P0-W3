@@ -1,10 +1,35 @@
 function countProfit(shoppers) {
-  let listBarang = [ ['Sepatu Stacattu', 1500000, 10],
-                     ['Baju Zoro', 500000, 2],
-                     ['Sweater Uniklooh', 175000, 1]
-                   ];
-
-  // you can only write your code here!
+  let listBarang = [
+    ['Sepatu Stacattu', 1500000, 10],
+    ['Baju Zoro', 500000, 2],
+    ['Sweater Uniklooh', 175000, 1],
+  ];
+  
+  if(shoppers.length===0){
+    return []
+  }
+  
+  var hasil = [];
+  for (var i = 0; i < listBarang.length; i++) {
+    let tampung = {};
+    let pembeli = [];
+    let sisa = 0;
+    for (var j = 0; j < shoppers.length; j++) {
+      if (
+        shoppers[j].product === listBarang[i][0] &&
+        sisa + shoppers[j].amount <= listBarang[i][2]
+      ) {
+        sisa += shoppers[j].amount;
+        pembeli.push(shoppers[j].name);
+      }
+    }
+    tampung['products'] = listBarang[i][0];
+    tampung['shoppers'] = pembeli;
+    tampung['leftOver'] = listBarang[i][2] - sisa;
+    tampung['totalProfit'] = listBarang[i][1] * sisa;
+    penampung.push(tampung);
+  }
+  return hasil;
 }
 
 // TEST CASES
@@ -35,7 +60,8 @@ console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 8},
 //     shoppers: [ 'Rani' ],
 //     leftOver: 0,
 //     totalProfit: 175000 } ]
-console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
+
+// console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
 // [ { product: 'Sepatu Stacattu',
 //     shoppers: [],
 //     leftOver: 10,
@@ -48,4 +74,41 @@ console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
 //     shoppers: [],
 //     leftOver: 1,
 //     totalProfit: 0 } ]
-console.log(countProfit([])); //[]
+
+// console.log(countProfit([])); //[]
+
+
+// let listBarang = [ ['Sepatu Stacattu', 1500000, 10],
+//                      ['Baju Zoro', 500000, 2],
+//                      ['Sweater Uniklooh', 175000, 1]
+//                    ];
+
+//   // you can only write your code here!
+//   var result = {}
+
+//   for (var i = 0; i < listBarang.length; i++){
+//     if(result[listBarang[i][0]] === undefined){
+//       result[listBarang[i][0]] = {
+//         product: listBarang[i][0],
+//         shoppers: [],
+//         leftOver: 0,
+//         totalProfit: 0
+//       }
+//     }
+//     for (var j = 0; j < shoppers.length; j++) {
+
+//     if (listBarang[i][0] === shoppers[j].product) {
+//       // var kalkulasi = listBarang[i][2] - shoppers[j].amount
+//       // console.log(kalkulasi)
+
+//       result[listBarang[i][0]].shoppers.push(shoppers[j].name)
+//       // result[listBarang[i][0]].leftOver =
+//       result[listBarang[i][0]].totalProfit += listBarang[i][1] * shoppers[j].amount
+//       }
+//     }
+//     var result2 = []
+//       for (var x in result){
+//         result2.push(result[x])
+//       }
+//   }
+//   return result2
