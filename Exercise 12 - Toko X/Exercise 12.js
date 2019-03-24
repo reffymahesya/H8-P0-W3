@@ -11,9 +11,9 @@ function countProfit(shoppers) {
   
   var hasil = [];
   for (var i = 0; i < listBarang.length; i++) {
-    let tampung = {};
-    let pembeli = [];
-    let sisa = 0;
+    var tampung = {};
+    var pembeli = [];
+    var sisa = 0;
     for (var j = 0; j < shoppers.length; j++) {
       if (
         shoppers[j].product === listBarang[i][0] &&
