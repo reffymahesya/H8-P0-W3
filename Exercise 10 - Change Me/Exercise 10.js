@@ -6,13 +6,19 @@ function changeMe(arr) {
   
   for (var i = 0; i < arr.length; i++){
     var obj = {}
+    var years = 2019
+    var ageCalculation = years - arr[i][3]
+   
     obj.firstName = arr[i][0]
     obj.lastName = arr [i][1]
     obj.gender = arr [i][2]
     if (arr[i][3] === undefined){
       obj.age = 'Invalid Birth Year'
-    } else {
-      obj.age = 2019 - arr[i][3]
+    } else if (arr[i][3] > years){
+      obj.age = 'You should not be born yet'
+    }
+    else {
+      obj.age = Math.abs(ageCalculation)
     }
   console.log(obj)
   }  
