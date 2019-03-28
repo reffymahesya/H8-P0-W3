@@ -27,7 +27,7 @@ function countProfit(shoppers) {
     tampung['shoppers'] = pembeli;
     tampung['leftOver'] = listBarang[i][2] - sisa;
     tampung['totalProfit'] = listBarang[i][1] * sisa;
-    penampung.push(tampung);
+    hasil.push(tampung);
   }
   return hasil;
 }
